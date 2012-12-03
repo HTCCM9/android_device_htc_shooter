@@ -57,29 +57,27 @@ $(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.com.google.clientidbase=android-sprint-us \
-	ro.com.google.clientidbase.yt=android-sprint-us \
-	ro.com.google.clientidbase.am=android-sprint-us \
-	ro.com.google.clientidbase.vs=android-sprint-us \
-	ro.com.google.clientidbase.gmm=android-sprint-us \
-	ro.com.google.clientidbase.ms=android-sprint-us \
-	ro.com.google.locationfeatures=1 \
-	ro.com.google.networklocation=1 \
-	ro.phone.min_match=7 \
-	ro.product.model=PG86100 \
-	ro.cdma.home.operator.alpha=sprint \
-	gsm.sim.operator.alpha=sprint \
-	gsm.operator.alpha=sprint \
-	ro.cdma.home.operator.numeric=310120 \
-	gsm.sim.operator.numeric=310120 \
-	gsm.operator.numeric=310120 \
+	ro.ril.oem.ecclist=911 \
+	ro.ril.set.mtusize=1472 \
+	ro.com.google.clientidbase=android-htc \
+	ro.com.google.clientidbase.yt=android-virgin-us \
+	ro.com.google.clientidbase.am=android-virgin-us \
+	ro.com.google.clientidbase.gmm=android-htc \
+	ro.com.google.clientidbase.ms=android-virgin-us \
+	ro.com.google.clientidbase=android-htc \
+	ro.com.google.gmsversion=4.0_r2 \
+	ro.bt.tetheringUI=0 \
+	ro.usb.tetheringUI=0 \
+	ro.product.model=HTCEVOV4G \
+	ro.cdma.home.operator.alpha=Virgin Mobile \
+	gsm.sim.operator.alpha=Virgin Mobile \
+	gsm.operator.alpha=Virgin Mobile \
+	ro.cdma.home.operator.numeric=311490 \
+	gsm.sim.operator.numeric=311490 \
+	gsm.operator.numeric=311490 \
 	gsm.sim.operator.iso-country=us \
 	gsm.operator.iso-country=us \
-	ro.com.google.locationfeatures=1 \
-	ro.setupwizard.enable_bypass=1 \
-	ro.media.dec.jpeg.memcap=20000000 \
-	dalvik.vm.lockprof.threshold=500 \
-	dalvik.vm.dexopt-flags=m=y \
+	ro.da1.enable=true \
 	ro.opengles.version=131072
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/shooter/overlay
@@ -131,8 +129,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += en
 
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab \
-    device/htc/shooter/prebuilt/system/etc/apns-conf.xml:system/etc/apns-conf.xml
+    device/htc/shooter/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab
 
 # common msm8660 configs
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
@@ -150,8 +147,9 @@ $(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_BRAND := HTC
+PRODUCT_BRAND := virgin_mobile
 PRODUCT_NAME := htc_shooter
 PRODUCT_DEVICE := shooter
 PRODUCT_MODEL := PG86100
 PRODUCT_MANUFACTURER := HTC
+BUILD_FINGERPRINT := virgin_mobile/htc_shooter/shooter:4.0.3/IML74K/372137.2:user/release-keys
