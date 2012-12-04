@@ -45,8 +45,9 @@ PRODUCT_COPY_FILES += \
 #Add touchscreen config file
 PRODUCT_COPY_FILES += \
     device/htc/shooter/prebuilt/system/usr/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
-    device/htc/shooter/prebuilt/system/usr/keylayout/atmel-touchscreen.kl:system/usr/keylayout/atmel-touchscreen.kl \
-    device/htc/shooter/prebuilt/system/usr/idc/shooter-keypad.idc:system/usr/idc/shooter-keypad.idc
+    device/htc/shooter/prebuilt/system/usr/idc/projector_input.idc:system/usr/idc/projector_input.idc \
+    device/htc/shooter/prebuilt/system/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
+    device/htc/shooter/prebuilt/system/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
 
 # media config xml file
 PRODUCT_COPY_FILES += \
@@ -92,19 +93,34 @@ PRODUCT_PACKAGES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/prebuilt/system/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+    device/htc/shooter/prebuilt/system/usr/keychars/Generic.kcm.bin:system/usr/keychars/Generic.kcm.bin \
     device/htc/shooter/prebuilt/system/usr/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/htc/shooter/prebuilt/system/usr/keychars/shooter-keypad.kcm.bin:system/usr/keychars/shooter-keypad.kcm.bin \
-    device/htc/shooter/prebuilt/system/usr/keychars/BT_HID.kcm.bin:system/usr/keychars/BT_HID.kcm.bin \
+    device/htc/shooter/prebuilt/system/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+    device/htc/shooter/prebuilt/system/usr/keychars/Virtual.kl:system/usr/keychars/Virtual.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/atmel-touchscreen.kl:system/usr/atmel-touchscreen/qwerty.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
     device/htc/shooter/prebuilt/system/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/shooter/prebuilt/system/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/htc/shooter/prebuilt/system/usr/keylayout/shooter-keypad.kl:system/usr/keylayout/shooter-keypad.kl \
-    device/htc/shooter/prebuilt/system/usr/keylayout/BT_HID.kl:system/usr/keylayout/BT_HID.kl \
-    device/htc/shooter/prebuilt/system/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl
 
 # Firmware
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/prebuilt/system/etc/firmware/default_bak.acdb:/system/etc/firmware/default_bak.acdb
+    device/htc/shooter/prebuilt/system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd:/system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd \
+    device/htc/shooter/prebuilt/system/etc/firmware/default_bak.acdb:/system/etc/firmware/default_bak.acdb \
+    device/htc/shooter/prebuilt/system/etc/firmware/fw_bcm4329.bin:/system/etc/firmware/fw_bcm4329.bin \
+    device/htc/shooter/prebuilt/system/etc/firmware/fw_bcm4329_apsta.bin:/system/etc/firmware/fw_bcm4329_apsta.bin \
+    device/htc/shooter/prebuilt/system/etc/firmware/leia_pfp_470.fw:/system/etc/firmware/leia_pfp_470.fw \
+    device/htc/shooter/prebuilt/system/etc/firmware/leia_pm4_470.fw:/system/etc/firmware/leia_pm4_470.fw \
+    device/htc/shooter/prebuilt/system/etc/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw
 
 TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/root/kernel
 
@@ -133,12 +149,6 @@ PRODUCT_COPY_FILES += \
 
 # common msm8660 configs
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
-
-# media profiles and capabilities spec
-$(call inherit-product, device/htc/shooter/media_a1026.mk)
-
-# htc audio settings
-$(call inherit-product, device/htc/shooter/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
