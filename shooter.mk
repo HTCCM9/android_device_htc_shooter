@@ -83,10 +83,10 @@ PRODUCT_PACKAGES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/prebuilt/system/usr/keychars/Generic.kcm.bin:system/usr/keychars/Generic.kcm.bin \
-    device/htc/shooter/prebuilt/system/usr/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/htc/shooter/prebuilt/system/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-    device/htc/shooter/prebuilt/system/usr/keychars/Virtual.kl:system/usr/keychars/Virtual.kl \
+    device/htc/shooter/prebuilt/system/usr/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
+    device/htc/shooter/prebuilt/system/usr/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
+    device/htc/shooter/prebuilt/system/usr/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
+    device/htc/shooter/prebuilt/system/usr/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm \
     device/htc/shooter/prebuilt/system/usr/keylayout/atmel-touchscreen.kl:system/usr/atmel-touchscreen/qwerty.kl \
     device/htc/shooter/prebuilt/system/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     device/htc/shooter/prebuilt/system/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
@@ -143,7 +143,7 @@ $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
 # stuff common to all HTC phones
-#$(call inherit-product, device/htc/common/common.mk)
+$(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
