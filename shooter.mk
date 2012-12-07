@@ -73,6 +73,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/shooter/overlay
 
+# Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
@@ -112,6 +113,9 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/prebuilt/system/etc/firmware/leia_pm4_470.fw:/system/etc/firmware/leia_pm4_470.fw \
     device/htc/shooter/prebuilt/system/etc/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw
 
+PRODUCT_COPY_FILES += \
+    device/htc/shooter/vold.fstab:system/etc/vold.fstab \
+
 TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/root/kernel
 
 ifneq ($(TARGET_PREBUILT_KERNEL),)
@@ -141,9 +145,6 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
-
-# stuff common to all HTC phones
-$(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
