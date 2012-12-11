@@ -6,35 +6,30 @@
 /dev/kgsl-2d0           0666    root        root
 /dev/kgsl-3d0           0666    root        root
 /dev/kgsl-2d1           0666    root        root
-/dev/ion                0664    system      system
 /dev/msm_rotator        0660    system      graphics
 /dev/pmem               0660    system      graphics
 /dev/genlock            0666    root        root
 /dev/graphics/*         0660    root        graphics
 
-# block devices
-/dev/block/mmcblk0p21   0644    root        root
-
 # camera
 /dev/gemini0            0660    system      camera
 /dev/msm_camera/*       0660    system      camera
-/dev/pmem_smipool*      0660    system      camera
 /dev/pmem_camera*       0660    system      camera
 /dev/video*             0660    system      camera
-
-# the DIAG device node is world writable/readable.
-/dev/diag               0666    root        root
-
-/dev/rfkill             0660    wifi        wifi
+/dev/msm_vidc_dec       0660    system      audio
+/dev/msm_vidc_dec_sec   0660    system      audio
+/dev/msm_vidc_enc       0660    system      audio
+/dev/msm_vidc_reg       0660    system      audio
 
 # sensors
 /dev/akm8975_daemon     0640    compass     system
 /dev/akm8975_aot        0640    compass     system
 /dev/cm3602             0640    compass     system
 /dev/lightsensor        0640    system      system
-
-# audio
-/dev/msm_acdb           0660    system      audio
+/dev/oncrpc/*           0660    root        system
+ 
+#for audio
+/dev/msm_acdb	        0660    system      audio
 /dev/codec_aic3254      0660    system      audio
 /dev/msm_audio_dev_ctrl 0660    system      audio
 /dev/control0           0660    system      audio
@@ -47,20 +42,15 @@
 /dev/htc-acoustic       0660    system      audio
 /dev/controlC0          0660    system      audio
 /dev/adsp               0660    system      audio
-/dev/pmem_audio         0660    system      audio
-/dev/pmem_adsp*         0660    system      audio
-/dev/tpa2051d3          0660    system      audio
-/dev/msm_vidc_dec       0660    system      audio
-/dev/msm_vidc_dec_sec   0660    system      audio
-/dev/msm_vidc_enc       0660    system      audio
-/dev/msm_vidc_reg       0660    system      audio
+/dev/pmem_audio	        0660    system      audio
+/dev/pmem_smipool*      0660    system      audio
+/dev/tpa2051d3	        0660    system      audio
 /dev/msm_fm             0660    system      audio
 /dev/msm_mvs            0660    system      audio
 /dev/msm_qcelp_in       0660    system      audio
 /dev/msm_evrc_in        0660    system      audio
 /dev/msm_wma            0660    system      audio
 /dev/msm_wmapro         0660    system      audio
-/dev/msm_aac            0660    system      audio
 /dev/msm_aac_in         0660    system      audio
 /dev/msm_amrnb_in       0640    system      audio
 
@@ -68,9 +58,6 @@
 /dev/ttyHSUSB0          0600    system      system
 /dev/ttySA0             0600    system      system
 /dev/smd0               0640    radio       radio
-/dev/smd2               0660    bluetooth   bluetooth
-/dev/smd3               0660    bluetooth   bluetooth
-/dev/smd4               0660    system      system
 /dev/smd7               0640    radio       radio
 /dev/smd9               0600    system      system
 /dev/smdcntl0           0640    radio       radio
@@ -85,11 +72,5 @@
 /dev/qmi0               0640    radio       radio
 /dev/qmi1               0640    radio       radio
 /dev/qmi2               0640    radio       radio
-/dev/oncrpc/*           0666    root        qcom_oncrpc
 /dev/msm_dsps           0660    system      system
 /dev/rtc0               0600    system      system
-
-/dev/rmnet_mux_ctrl     0640    radio       radio
-/dev/oncrpc/*           0660    root        system
-/dev/tzcom              0660    system      drmrpc
-/dev/qseecom            0660    system      drmrpc

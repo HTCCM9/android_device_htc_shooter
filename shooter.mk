@@ -109,7 +109,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/shooter/prebuilt/root/init.shooter.rc:root/init.shooter.rc \
-    device/htc/shooter/prebuilt/root/init.shooter.usb.rc:root/init.shooter.usb.rc \
     device/htc/shooter/prebuilt/root/ueventd.shooter.rc:root/ueventd.shooter.rc
 
 # media config xml file
@@ -158,15 +157,14 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/prebuilt/system/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/shooter/prebuilt/system/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/htc/shooter/prebuilt/system/usr/keylayout/shooter-keypad.kl:system/usr/keylayout/shooter-keypad.kl \
-
-#    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
-#    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl \
-#    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
-#    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
-#    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
-#    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
-#    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
-#    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
+    device/htc/shooter/prebuilt/system/usr/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -188,10 +186,10 @@ PRODUCT_COPY_FILES += \
 
 #Config file
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/configs/thermald.conf:system/etc/thermald.conf \
     device/htc/shooter/configs/audio_policy.conf:system/etc/audio_policy.conf \
     device/htc/shooter/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/shooter/configs/apns-conf.xml:system/etc/apns-conf.xml
+    device/htc/shooter/configs/apns-conf.xml:system/etc/apns-conf.xml \
+    device/htc/shooter/configs/voicemail-conf.xml:system/etc/voicemail-conf.xml
 
 
 PRODUCT_COPY_FILES += \
