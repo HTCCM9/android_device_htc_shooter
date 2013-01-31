@@ -188,9 +188,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/shooter/configs/audio_policy.conf:system/etc/audio_policy.conf \
     device/htc/shooter/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/shooter/configs/apns-conf.xml:system/etc/apns-conf.xml \
-    device/htc/shooter/configs/voicemail-conf.xml:system/etc/voicemail-conf.xml
-
+    device/htc/shooter/configs/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
     device/htc/shooter/vold.fstab:system/etc/vold.fstab \
