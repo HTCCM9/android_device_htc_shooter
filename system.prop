@@ -1,22 +1,30 @@
 #
 # system.prop for shooter
 #
+#
+dev.pm.dyn_samplingrate=1
+lpa.use-stagefright=true
+lpa.decode=false
 
-ro.sf.lcd_density=240
+#cm qcom build lub
+com.qc.hardware=true
+com.qc.hdmi_out=true
+ro.hdmi.enable=true
 
-sf.debug.enable3D = 1
-debug.fb.rgb565 = 0
-
-debug.sf.hw = 1
-debug.composition.type = c2d
-debug.enabletr = true
-debug.qctwa.preservebuf = 1
+# board has 3D panel
+persist.user.panel3D=1
 
 rild.libpath=/system/lib/libhtc_ril.so
-
-# Default network type.
-# 4 => CDMA mode preferred.
-ro.telephony.default_network=4
+# htc v4 ril
+ro.telephony.ril.v3=signalstrength
+ro.ril.enable.garbage.filter=0
+ro.telephony.default_network = 4
+gsm.sim.operator.alpha = sprint
+gsm.sim.operator.numeric = 310120
+gsm.sim.operator.iso-country = us
+gsm.operator.alpha = sprint
+gsm.operator.numeric = 310120
+gsm.operator.iso-country = us
 
 #
 # system props for the data modules
@@ -26,91 +34,45 @@ persist.data_netmgrd_nint=8
 persist.data_netmgrd_mtu=1472
 #
 
+#Modify MTU from 1500 to 1472 on 3G network
+ro.ril.set.mtu1472 = 1
+
+net.tcp.buffersize.wimax = 4096,221184,524288,4096,16384,110208
+
 wifi.interface=wlan0
-wifi.supplicant_scan_interval=15
+wifi.supplicant_scan_interval=30
+
+# density in DPI of the LCD of this board. This is used to scale the UI
+# appropriately. If this property is not defined, the default value is 160 dpi.
+ro.sf.lcd_density=240
+
+# For auto backlight default value
+settings.display.autobacklight=1
+
+# For the default value of agps
+ro.ril.def.agps.mode=2
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
-ro.opengles.version = 131072
+ro.opengles.version=131072
 
-# This is a high density device with more memory, so larger vm heaps for it.
-# Change to 32m, due to 2.3.3 GB already change to 32m
-# For ICS project, default 32m/48m
-dalvik.vm.heapsize=128m
-dalvik.vm.heapgrowthlimit=48m
-
-# For the default value of agps
-ro.ril.def.agps.mode = 2
+mobiledata.interfaces=rmnet0,wlan0,gprs,ppp0,wimax0
 
 # For emmc phone storage
 ro.phone_storage = 0
-# For ext4 file system
-ro.ext4fs = 1
 
-# For FOTA setting (leave empty value to use default)
-ro.htc.checkin.url = http://andchin.htc.com/android/checkin
-ro.htc.checkin.crashurl = http://andchin.htc.com/android/crash
-ro.htc.checkin.url_CN = http://andchin.htccomm.com.cn/android/checkin
-ro.htc.checkin.crashurl_CN = http://andchin.htccomm.com.cn/android/crash
-ro.htc.checkin.exmsg.url = http://fotamsg.htc.com/android/extra/
-ro.htc.checkin.exmsg.url_CN = http://fotamsg.htccomm.com.cn/android/extra/
-ro.htc.appupdate.url = http://apu-chin.htc.com/check-in/rws/and-app/update
-ro.htc.appupdate.url_CN = http://apu-chin.htccomm.com.cn/check-in/rws/and-app/update
-ro.htc.appupdate.exmsg.url = http://apu-msg.htc.com/extra-msg/rws/and-app/msg
-ro.htc.appupdate.exmsg.url_CN = http://apu-msg.htccomm.com.cn/extra-msg/rws/and-app/msg
+# Make rmt_storage start at init
+ro.emmc = 1
 
-# release Bluetooth HW/SW information
-ro.bt.chipset	= Broadcom BCM4329-B1
-ro.bt.stack	= Broadcom BTL-A
-ro.bt.stack.version	= 2.0.50.032
-#0x10000010010100101000011 represent bt profile list
-ro.bt.profiles	= 4270403
+# UMS
+persist.sys.usb.config=mass_storage,adb
 
-# Properties of BTLA stack
-service.brcm.bt.activation = 0
-service.brcm.bt.srv_active = 0
-service.brcm.bt.hcid_active = 0
-service.brcm.bt.btld = 0
-service.brcm.bt.btld_pid = 0
-service.brcm.bt.avrcp_pass_thru = 0
-service.brcm.bt.avrcp_toggle = 1
-service.brcm.bt.local_name =
+# System property for cabl
+ro.qualcomm.cabl=1
 
-#Welly_Fang
-ro.htc.device.slot1 = NV
+# Engineer ID
+ro.engineerid = 3
 
-# Following property will be reference by Settings.
-ro.product.processor = 1.2 GHz dual core
-ro.product.ram = 1GB
-ro.product.display_resolution = 4.3 inch qHD resolution
-ro.product.main_camera = 5M * 2
-ro.product.front_camera = 1.3M
-ro.product.bluetooth = 3.0
-ro.product.wifi = 802.11 b/g/n
-
-# For opensense sdk
-ro.htc.common.version = 3.0.0.0
-
-# Properties for supporting framework features
-ro.htc.framework.screencapture = true
-
-# For QC perf binary hooks
-# src:vendor/qcom/proprietary/android-perf/release/lib/<CPU arch>/libqc-opt.so
-ro.vendor.extension_library=/system/lib/libqc-opt.so
-
-#
-# ADDITIONAL_BUILD_PROPERTIES
-#
-ro.setupwizard.mode=OPTIONAL
-drm.service.enabled=true
-ro.com.google.gmsversion=4.0_r2
-media.a1026.nsForVoiceRec=0
-htc.audio.alt.enable=1
-htc.audio.hac.enable=1
-lpa.decode=true
-lpa.use-stagefright=true
-htc.audio.q6.topology=0
-ro.setupwizard.enterprise_mode=1
-dalvik.vm.dexopt-flags=m=y
-net.bt.name=Android
-dalvik.vm.stack-trace-file=/data/anr/traces.txt
+# Sleep
+ro.ril.disable.power.collapse=0
+pm.sleep_mode=1

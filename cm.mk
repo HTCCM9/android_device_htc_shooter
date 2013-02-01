@@ -25,7 +25,7 @@ $(call inherit-product, vendor/cm/config/cdma.mk)
 PRODUCT_NAME := cm_shooter
 PRODUCT_BRAND := virgin_mobile
 PRODUCT_DEVICE := shooter
-PRODUCT_MODEL := PG86100
+PRODUCT_MODEL := Evo V 4G
 PRODUCT_MANUFACTURER := HTC
 
 # Release name and versioning

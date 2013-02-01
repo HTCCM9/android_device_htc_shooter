@@ -122,26 +122,24 @@ $(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.ril.oem.ecclist=911 \
 	ro.ril.set.mtusize=1472 \
-	ro.com.google.clientidbase=android-htc \
-	ro.com.google.clientidbase.yt=android-virgin-us \
-	ro.com.google.clientidbase.am=android-virgin-us \
-	ro.com.google.clientidbase.gmm=android-htc \
-	ro.com.google.clientidbase.ms=android-virgin-us \
-	ro.com.google.clientidbase=android-htc \
+	ro.com.google.clientidbase=android-sprint-us \
+	ro.com.google.locationfeatures=1 \
+	ro.cdma.home.operator.numeric=310120 \
+	ro.cdma.home.operator.alpha=Sprint
 	ro.com.google.gmsversion=4.0_r2 \
 	ro.bt.tetheringUI=0 \
 	ro.usb.tetheringUI=0 \
 	ro.product.model=HTCEVOV4G \
-	ro.cdma.home.operator.alpha=Virgin Mobile \
-	gsm.sim.operator.alpha=Virgin Mobile \
-	gsm.operator.alpha=Virgin Mobile \
-	ro.cdma.home.operator.numeric=311490 \
-	gsm.sim.operator.numeric=311490 \
-	gsm.operator.numeric=311490 \
+	ro.cdma.home.operator.alpha=Sprint \
+	gsm.sim.operator.alpha=Sprint \
+	gsm.operator.alpha=Sprint \
+	ro.cdma.home.operator.numeric=310120 \
+	gsm.sim.operator.numeric=310120 \
+	gsm.operator.numeric=310120 \
 	gsm.sim.operator.iso-country=us \
 	gsm.operator.iso-country=us \
 	ro.da1.enable=true \
-	ro.opengles.version=131072
+	ro.opengles.version=310120
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/shooter/overlay
 
@@ -168,7 +166,6 @@ PRODUCT_COPY_FILES += \
 
 # Firmware
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/prebuilt/system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd:/system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd \
     device/htc/shooter/prebuilt/system/etc/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd \
     device/htc/shooter/prebuilt/system/etc/firmware/default_bak.acdb:/system/etc/firmware/default_bak.acdb \
     device/htc/shooter/prebuilt/system/etc/firmware/fw_bcm4329.bin:/system/etc/firmware/fw_bcm4329.bin \
@@ -180,9 +177,7 @@ PRODUCT_COPY_FILES += \
 #Touchscreen config file
 PRODUCT_COPY_FILES += \
     device/htc/shooter/prebuilt/system/usr/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
-    device/htc/shooter/prebuilt/system/usr/idc/projector_input.idc:system/usr/idc/projector_input.idc \
-    device/htc/shooter/prebuilt/system/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-    device/htc/shooter/prebuilt/system/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
+    device/htc/shooter/prebuilt/system/usr/idc/shooter-keypad.idc:system/usr/idc/shooter-keypad.idc 
 
 #Config file
 PRODUCT_COPY_FILES += \
@@ -223,7 +218,7 @@ $(call inherit-product, build/target/product/full_base.mk)
 PRODUCT_NAME := htc_shooter
 PRODUCT_DEVICE := shooter
 PRODUCT_BRAND := virgin_mobile
-PRODUCT_MODEL := PG86100
+PRODUCT_MODEL := Evo V 4G
 PRODUCT_MANUFACTURER := HTC
 
 # Common Qualcomm scripts
