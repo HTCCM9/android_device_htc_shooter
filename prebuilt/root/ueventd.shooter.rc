@@ -26,7 +26,7 @@
 /dev/akm8975_aot        0640    compass     system
 /dev/cm3602             0640    compass     system
 /dev/lightsensor        0640    system      system
-/dev/oncrpc/*           0660    root        system
+/dev/oncrpc/*           0666    root        qcom_oncrpc
  
 #for audio
 /dev/msm_acdb	        0660    system      audio
