@@ -189,6 +189,7 @@ TARGET_RECOVERY_FSTAB := device/htc/shooter/recovery.fstab
 
 # Kernel
 TARGET_KERNEL_CONFIG := shooter_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/shooter
 
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
