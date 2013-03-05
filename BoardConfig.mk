@@ -187,7 +187,8 @@ BOARD_HAS_NO_MISC_PARTITION := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_FSTAB := device/htc/shooter/recovery.fstab
 
-TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/root/kernel
+# Kernel
+TARGET_KERNEL_CONFIG := shooter_defconfig
 
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
